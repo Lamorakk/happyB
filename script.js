@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var audioContext = new (window.AudioContext || window.webkitAudioContext)();
     var analyser = audioContext.createAnalyser();
-    navigator.mediaDevices.getUserMedia({ audio: true })
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
         .then(function(stream) {
             var microphone = audioContext.createMediaStreamSource(stream);
             microphone.connect(analyser);
